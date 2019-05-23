@@ -1,20 +1,22 @@
-<form name="searchForm">
-  <div class="form-group">
-    <label for="productTitle">Product Title:</label>
-    <input type="text" id="productTitle"
-      placeholder="Title" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="productPrice">Product Price:</label>
-    <input name="productPrice" type="number" id="productPrice"
-      min="0" placeholder="Price" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="productCategory">Product Category:</label>
-    <select id="productCategory" class="form-control"></select>
-  </div>
-  <div class="form-group">
-    <button type="submit"
-      class="btn btn-primary btn-block">Search</button>
-  </div>
+<form #f="ngForm">
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Product Title"
+    name="title" ngModel>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="Product Price"
+    name="price" min="0" ngModel>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Category" name="category" ngModel>
+      <mat-option *ngFor="let c of categories" [value]="c">{{c}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" type="submit">
+    <mat-icon>search</mat-icon>Search
+  </button>
 </form>

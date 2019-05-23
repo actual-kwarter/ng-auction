@@ -1,7 +1,7 @@
 <p>
   <span *ngFor="let isEmpty of stars"
   class="material-icons">
-    {{ isEmpty ? '' : 'O' }}
+  <mat-icon>{{ isEmpty ? 'star_border' : 'star' }}</mat-icon>
   </span>
   <span>{{ rating }} stars</span>
 </p>

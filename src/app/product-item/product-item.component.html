@@ -1,11 +1,14 @@
-<div class="thumbnail">
-  <img src="https://4.bp.blogspot.com/-iXnqdAYGnTo/XKkWioEw5-I/AAAAAAAAGbM/VXVhIpWl65kaGeW5MyAMHJzN9pM5h_4IQCLcBGAs/s320/3.jpg">
-  <div class="caption">
-    <h4 class="float-right">{{product.price | currency}}</h4>
-    <h4><a [routerLink]="['/products', product.id]">{{product.title}}</a></h4>
-    <p>{{product.description}}</p>
-  </div>
+<mat-card>
+  <mat-card-title>{{product.title}}</mat-card-title>
+  <img mat-card-image 
+  src="https://4.bp.blogspot.com/-iXnqdAYGnTo/XKkWioEw5-I/AAAAAAAAGbM/VXVhIpWl65kaGeW5MyAMHJzN9pM5h_4IQCLcBGAs/s320/3.jpg">
+  <mat-card-content>
+    {{product.description}}
+  </mat-card-content>
   <div class="ratings">
     <nga-stars [rating]="product.rating"></nga-stars>
   </div>
-</div>
+  <mat-card-actions>
+    <a mat-button color="accent" [routerLink]="['/products', product.id]">View</a>
+  </mat-card-actions>
+</mat-card>
