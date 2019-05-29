@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { Product, ProductService } from '../shared/services';
 

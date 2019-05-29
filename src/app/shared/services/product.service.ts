@@ -1,11 +1,8 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
 export interface Product {
   id: number;
   title: string;
@@ -24,8 +21,8 @@ export class ProductService {
 
   getById(productId: number): Observable<Product> {
     return this.http.get<Product[]>('/data/products.json')
-    .pipe(
-      map(products => <Product>products.find(p => p.id === productId))
-    )
+      .pipe(
+        map(products => <Product>products.find(p => p.id === productId))
+      );
   }
 }

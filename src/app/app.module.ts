@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
+import { AppComponent } from './app.component';
+import { routes } from './app.routing';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { ProductService } from './shared/services';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,17 +19,15 @@ import { ProductService } from './shared/services';
   ],
   imports: [
     BrowserModule,
+
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     FlexLayoutModule,
+    RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [
-    ProductService
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+  providers: [ProductService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
