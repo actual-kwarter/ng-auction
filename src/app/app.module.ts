@@ -7,6 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ProductService } from './shared/services';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +21,11 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ProductService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
