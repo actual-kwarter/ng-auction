@@ -6,7 +6,7 @@ export const routes: Route[] = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
-    path: '/products/:productId',
+    path: 'products/:productId',
     loadChildren: './product/product.module#ProductModule'
   }
 ];
